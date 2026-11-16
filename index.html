@@ -1,30 +1,347 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  </title>
-    <link rel="stylesheet" href="ct-2.css">
-  </head>
-  <body>
-    <header> 
-    <h1> Методы курса — не просто советы, а проверенные практики </h1>
-    <p> Мы опираемся на научные исследования и реальные кейсы, чтобы вы не тратили время впустую. Данные помогают нам отсекать модные, но неэффективные тренды и оставлять только то, что действительно даёт результат. Такой подход экономит ваше время уже на этапе обучения — вы сразу получаете работающие инструменты без лишней теории</p>
-    <hr>
-    <br>
-  </header>
-    <main>
-     <section>
-    <h2> Проблема: потери на переключениях </h2>
-    <p> В среднем требуется <strong> 23 минуты </strong>, чтобы вернуться к задаче после отвлечения. Частые переключения съедают продуктивность. Частые переключения съедают продуктивность. При этом большинство людей даже не замечают этих микропотерь: они кажутся незначительными, но в сумме формируют серьёзный дефицит времени. Именно поэтому в курсе мы делаем отдельный модуль по управлению отвлекающими факторами — чтобы вы могли вернуть эти «украденные» часы</p>
-     </section>
-    <hr>
-    <br>
-    <section>
-    <h3> <i> Решение: </i> приоритизация и ритм </h3>
-    <p> Матрица Эйзенхауэра и техника Pomodoro помогают фокусироваться на важном и учитывать естественные циклы внимания (20–40 минут). Это происходит за счёт того, что вы перестаёте реагировать на внешние «пожары» и начинаете действовать по собственному плану. Регулярные паузы не снижают продуктивность — наоборот, они помогают мозгу «перезагружаться» и сохранять концентрацию до конца дня </p>
-    <
-      <h4> Леонтьев Матвей 26.10.2026 </h4>
-    </footer>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f3efe6">
+<title>Север рядом — путешествия за тишиной</title>
+<div id="glina">
+
+<style>
+  #glina{
+    --bg:#f6f1e8; --surface:#fffaf1; --text:#2a2419; --muted:#7a6f5c;
+    --accent:#a45a3d; --accent-dark:#7d4029; --line:#e6dccb;
+    --shadow:0 14px 40px rgba(42,36,25,.08); --radius:20px;
+    background:var(--bg); color:var(--text);
+    font-family:Arial,Helvetica,sans-serif; line-height:1.55;
+    padding:0; margin:0;
+  }
+  #glina *{box-sizing:border-box}
+  #glina a{color:inherit;text-decoration:none}
+  #glina button,#glina input,#glina select,#glina textarea{font:inherit}
+  #glina button{cursor:pointer}
+  #glina img{display:block;max-width:100%}
+  #glina .container{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+  #glina .section{padding:80px 0}
+  #glina .eyebrow{margin:0 0 12px;color:var(--accent);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+  #glina h1,#glina h2,#glina h3,#glina p{margin-top:0}
+  #glina h1,#glina h2,#glina h3{line-height:1.1}
+  #glina h2{max-width:720px;margin-bottom:16px;font-size:clamp(1.9rem,4.5vw,3rem);letter-spacing:-.02em}
+  #glina .lead{max-width:580px;margin-bottom:32px;color:var(--muted)}
+  #glina .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 22px;border:0;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;transition:transform .2s,background .2s}
+  #glina .button:hover{transform:translateY(-2px);background:var(--accent-dark)}
+  #glina .button-outline{border:1px solid var(--line);background:transparent;color:var(--text)}
+  #glina .button-outline:hover{background:var(--surface);color:var(--text)}
+
+  /* БЛОК 1: Hero */
+  #glina .hero{padding:60px 0 70px}
+  #glina .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:48px}
+  #glina .hero h1{max-width:620px;margin-bottom:20px;font-size:clamp(2.4rem,5.4vw,4.6rem);letter-spacing:-.045em}
+  #glina .hero-copy{max-width:520px;margin-bottom:26px;color:var(--muted);font-size:1.05rem}
+  #glina .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  #glina .hero-visual{position:relative;min-height:440px;overflow:hidden;border-radius:26px;background:linear-gradient(180deg,rgba(42,36,25,.04),rgba(42,36,25,.35)),url("https://static.tildacdn.com/tild3434-6337-4533-b430-356331653865/orig.jpg") center/cover;box-shadow:var(--shadow)}
+  #glina .hero-tag{position:absolute;left:20px;bottom:20px;padding:10px 16px;border-radius:999px;background:rgba(255,250,241,.92);color:var(--text);font-size:.85rem;font-weight:700}
+
+  /* БЛОК 2: Преимущества */
+  #glina .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  #glina .step{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  #glina .step-icon{display:grid;width:54px;height:54px;margin-bottom:20px;place-items:center;border-radius:16px;background:color-mix(in srgb,var(--accent) 14%,var(--surface));font-size:1.5rem}
+  #glina .step h3{margin-bottom:8px;font-size:1.25rem}
+  #glina .step p{margin-bottom:0;color:var(--muted)}
+
+  /* БЛОК 3: Программы */
+  #glina .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  #glina .program{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+  #glina .program:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(42,36,25,.12)}
+  #glina .program-image{width:100%;height:200px;object-fit:cover}
+  #glina .program-body{padding:22px}
+  #glina .program-meta{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;color:var(--muted);font-size:.85rem}
+  #glina .program-body h3{margin:0 0 8px;font-size:1.3rem}
+  #glina .program-body p{margin:0 0 16px;color:var(--muted)}
+  #glina .program-price{font-weight:800;color:var(--accent);font-size:1.1rem;margin-bottom:14px}
+  #glina .program .button{align-self:flex-start;min-height:42px;padding:0 18px;font-size:.92rem}
+
+  /* БЛОК 4: Галерея */
+  #glina .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  #glina .gallery-item{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);background:var(--surface);padding:0;cursor:zoom-in}
+  #glina .gallery-item img{width:100%;height:190px;object-fit:cover;transition:transform .3s}
+  #glina .gallery-item:hover img{transform:scale(1.05)}
+  #glina .gallery-item:nth-child(1),
+  #glina .gallery-item:nth-child(6){grid-column:span 2}
+  #glina .gallery-item:nth-child(1) img,
+  #glina .gallery-item:nth-child(6) img{height:190px}
+
+  /* Лайтбокс */
+  #glina .lightbox{position:fixed;inset:0;z-index:1000;display:none;place-items:center;background:rgba(20,15,10,.88);padding:24px}
+  #glina .lightbox.open{display:grid}
+  #glina .lightbox img{max-width:min(1100px,92vw);max-height:86vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  #glina .lightbox-close{position:absolute;top:18px;right:22px;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:transparent;color:#fff;font-size:1.4rem}
+  #glina .lightbox-prev,#glina .lightbox-next{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:transparent;color:#fff;font-size:1.3rem}
+  #glina .lightbox-prev{left:20px}
+  #glina .lightbox-next{right:20px}
+
+  /* БЛОК 5: Форма + контакты */
+  #glina .contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
+  #glina .contact-info{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  #glina .contact-info dl{margin:0}
+  #glina .contact-info dt{margin:16px 0 4px;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+  #glina .contact-info dd{margin:0;font-weight:700;font-size:1.05rem}
+  #glina .contact-form{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  #glina .field{display:grid;gap:8px;margin:14px 0}
+  #glina .field label{font-size:.92rem;font-weight:700}
+  #glina .field input,
+  #glina .field textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);resize:vertical}
+  #glina .form-status{min-height:22px;margin:12px 0 0;color:var(--accent);font-weight:600}
+
+  #glina .footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  #glina .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    #glina .gallery-grid{grid-template-columns:repeat(3,1fr)}
+    #glina .gallery-item:nth-child(1),
+    #glina .gallery-item:nth-child(6){grid-column:span 1}
+  }
+  @media (max-width:800px){
+    #glina .hero-grid,
+    #glina .contact-wrap{grid-template-columns:1fr}
+    #glina .hero-visual{min-height:340px}
+    #glina .steps,
+    #glina .programs{grid-template-columns:1fr}
+    #glina .section{padding:60px 0}
+  }
+  @media (max-width:540px){
+    #glina .container{width:min(100% - 28px,1120px)}
+    #glina .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    #glina .gallery-item img,
+    #glina .gallery-item:nth-child(1) img,
+    #glina .gallery-item:nth-child(6) img{height:150px}
+    #glina .hero-visual{min-height:280px}
+  }
+</style>
+
+<!-- ============ БЛОК 1: HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Гончарная студия · Москва</p>
+      <h1>Земля в руках. Тишина в голове.</h1>
+      <p class="hero-copy">Мастер-классы и курсы по керамике для тех, кто хочет замедлиться и сделать что-то настоящее своими руками. Без опыта — приходите как есть.</p>
+      <div class="hero-actions">
+        <a class="button" href="#glina-programs">Выбрать программу <span aria-hidden="true">↗</span></a>
+        <a class="button button-outline" href="#glina-contact">Записаться</a>
+      </div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Руки за гончарным кругом">
+      <span class="hero-tag">Ближайший МК — в субботу</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2: ПРЕИМУЩЕСТВА ============ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Почему к нам</p>
+    <h2>Три причины прийти хотя бы раз</h2>
+    <p class="lead">Глина — это не про результат, а про состояние. Мы помогаем в него попасть.</p>
+    <div class="steps">
+      <article class="step">
+        <div class="step-icon" aria-hidden="true">✦</div>
+        <h3>Малые группы</h3>
+        <p>До 6 человек за столом — мастер успевает подойти к каждому и показать руками.</p>
+      </article>
+      <article class="step">
+        <div class="step-icon" aria-hidden="true">⌁</div>
+        <h3>Всё включено</h3>
+        <p>Глина, инструменты, фартук и обжиг — в стоимости. Уходить с пустыми руками не придётся.</p>
+      </article>
+      <article class="step">
+        <div class="step-icon" aria-hidden="true">↗</div>
+        <h3>Заберёте домой</h3>
+        <p>Через две недели после обжига ваша чашка или ваза будет ждать вас в студии.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3: ПРОГРАММЫ ============ -->
+<section class="section" id="glina-programs" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <p class="eyebrow">Что выбрать</p>
+    <h2>Программы на любой уровень</h2>
+    <p class="lead">От одного вечера до восьми недель практики. Всё — с нуля.</p>
+    <div class="programs">
+      <article class="program">
+        <img class="program-image" src="https://i.1.creatium.io/disk2/d5/64/e6/3a13d7905f4b2899f4a05869ee0c3b29d2/007.jpg" alt="Гончарный круг" loading="lazy">
+        <div class="program-body">
+          <div class="program-meta"><span>2 часа</span><span>до 6 человек</span></div>
+          <h3>Первый круг</h3>
+          <p>Один вечер, одна чашка. Знакомство с гончарным кругом — уходите с готовым изделием.</p>
+          <div class="program-price">2 500 ₽</div>
+          <a class="button" href="#glina-contact">Записаться</a>
+        </div>
+      </article>
+      <article class="program">
+        <img class="program-image" src="https://static.tildacdn.com/tild3339-3766-4539-a138-313963396161/768ab333-ab46-46fd-9.jpeg" alt="Лепка из глины" loading="lazy">
+        <div class="program-body">
+          <div class="program-meta"><span>4 занятия</span><span>раз в неделю</span></div>
+          <h3>Курс новичка</h3>
+          <p>От лепки руками до работы на круге. Осваиваете базу и делаете сет из 3–4 предметов.</p>
+          <div class="program-price">9 800 ₽</div>
+          <a class="button" href="#glina-contact">Записаться</a>
+        </div>
+      </article>
+      <article class="program">
+        <img class="program-image" src="https://static.tildacdn.com/tild3762-3334-4531-b466-633665666166/IMG_2195.jpg" alt="Мастер за работой" loading="lazy">
+        <div class="program-body">
+          <div class="program-meta"><span>8 недель</span><span>средний уровень</span></div>
+          <h3>Своя посуда</h3>
+          <p>Глубокая практика: формы, глазури, обжиг. В финале — собственный сервиз на 4 персоны.</p>
+          <div class="program-price">24 000 ₽</div>
+          <a class="button" href="#glina-contact">Записаться</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4: ГАЛЕРЕЯ ============ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Работы учеников</p>
+    <h2>Что уносят с собой</h2>
+    <p class="lead">Нажмите на кадр, чтобы рассмотреть детали.</p>
+    <div class="gallery-grid" id="glinaGallery">
+      <button class="gallery-item" type="button" data-full="https://i.pinimg.com/originals/81/e0/61/81e0613a6ece91db3e3a384643d0fedd.jpg?nii=t">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&q=80" alt="Чашка ручной работы" loading="lazy">
+      </button>
+      <button class="gallery-item" type="button" data-full="https://potsandgods.ru/wp-content/uploads/2017/11/programma-kursa-dlya-nachinaushih.jpg">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Процесс лепки" loading="lazy">
+      </button>
+      <button class="gallery-item" type="button" data-full="https://i.pinimg.com/736x/7c/00/e8/7c00e8e936335a417be5e9396aa76e82.jpg">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&q=80" alt="Ваза" loading="lazy">
+      </button>
+      <button class="gallery-item" type="button" data-full="https://i.ebayimg.com/images/g/fM0AAeSw76JpLT3G/s-l1600.jpg">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Гончарный круг" loading="lazy">
+      </button>
+      <button class="gallery-item" type="button" data-full="https://avatars.mds.yandex.net/get-mpic/4794494/2a00000192c3861c7abe7a0da093dd6f81ca/orig">
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&q=80" alt="Глазурь" loading="lazy">
+      </button>
+      <button class="gallery-item" type="button" data-full="https://i.pinimg.com/736x/81/0b/58/810b583f64ff6bbc842c3d229d466dba.jpg">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Готовое изделие" loading="lazy">
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5: КОНТАКТЫ + ФОРМА ============ -->
+<section class="section" id="glina-contact" style="background:var(--surface);border-top:1px solid var(--line);">
+  <div class="container">
+    <p class="eyebrow">Записаться</p>
+    <h2>Приходите на первый круг</h2>
+    <p class="lead">Оставьте контакты — напишем в течение дня и подберём удобное время.</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <dl>
+          <dt>Адрес</dt>
+          <dd>Москва, Большая Новодмитровская, 36</dd>
+          <dt>Часы</dt>
+          <dd>Вт–Вс, 11:00–21:00</dd>
+          <dt>Телефон</dt>
+          <dd><a href="tel:+74950000000">+7 (495) 000-00-00</a></dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:hello@glina.studio">hello@glina.studio</a></dd>
+          <dt>Telegram</dt>
+          <dd><a href="#">@glina_studio</a></dd>
+        </dl>
+      </div>
+      <form class="contact-form" id="glinaForm">
+        <div class="field">
+          <label for="glinaName">Имя</label>
+          <input id="glinaName" name="name" type="text" placeholder="Как к вам обращаться?" required>
+        </div>
+        <div class="field">
+          <label for="glinaPhone">Телефон или email</label>
+          <input id="glinaPhone" name="contact" type="text" placeholder="+7 ... или name@mail.ru" required>
+        </div>
+        <div class="field">
+          <label for="glinaMessage">Комментарий</label>
+          <textarea id="glinaMessage" name="message" rows="3" placeholder="Сколько человек, какая программа, удобное время"></textarea>
+        </div>
+        <button class="button" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="glinaStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a class="logo" href="#" style="font-weight:800;">ГЛИНА<span style="color:var(--accent)">·</span>СТУДИЯ</a>
+    <span>Керамика, которая остаётся с вами.</span>
+    <span>© 2025 Глина</span>
+  </div>
+</footer>
+
+<!-- Лайтбокс -->
+<div class="lightbox" id="glinaLightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+  <button class="lightbox-close" type="button" id="glinaLightboxClose" aria-label="Закрыть">×</button>
+  <button class="lightbox-prev" type="button" id="glinaLightboxPrev" aria-label="Предыдущее">←</button>
+  <img src="" alt="" id="glinaLightboxImg">
+  <button class="lightbox-next" type="button" id="glinaLightboxNext" aria-label="Следующее">→</button>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('glina');
+  if(!root) return;
+
+  // Галерея + лайтбокс
+  var items = Array.prototype.slice.call(root.querySelectorAll('.gallery-item'));
+  var lightbox = root.querySelector('#glinaLightbox');
+  var lightboxImg = root.querySelector('#glinaLightboxImg');
+  var currentIndex = 0;
+
+  function openLightbox(index){
+    currentIndex = (index + items.length) % items.length;
+    var full = items[currentIndex].getAttribute('data-full');
+    var alt = items[currentIndex].querySelector('img').getAttribute('alt') || '';
+    lightboxImg.src = full;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function step(dir){ openLightbox(currentIndex + dir); }
+
+  items.forEach(function(item, i){
+    item.addEventListener('click', function(){ openLightbox(i); });
+  });
+  root.querySelector('#glinaLightboxClose').addEventListener('click', closeLightbox);
+  root.querySelector('#glinaLightboxPrev').addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+  root.querySelector('#glinaLightboxNext').addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+  lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') step(-1);
+    if(e.key === 'ArrowRight') step(1);
+  });
+
+  // Форма (демо)
+  root.querySelector('#glinaForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = root.querySelector('#glinaName').value.trim();
+    root.querySelector('#glinaStatus').textContent =
+      'Спасибо, ' + (name || 'друг') + '! Заявка отправлена. Мы свяжемся с вами в течение рабочего дня.';
+    e.target.reset();
+  });
+})();
+</script>
+
+</div>
+
+</body>
 </html>
